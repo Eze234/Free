@@ -7,6 +7,9 @@ Free is my server's bot. I'm leaving it open source because it's a pain to make 
 # Clone repository
 git clone https://github.com/Eze234/free.git free
 
+# Pull changes
+git pull https://github.com/Eze234/free.git
+
 cd free
 ```
 # `🐋 Docker`
