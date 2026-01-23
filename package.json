@@ -1,0 +1,18 @@
+{
+  "name": "free",
+  "module": "core/index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "discord.js": "^14.25.1",
+    "dotenv": "^17.2.3",
+    "mongoose": "^9.1.5"
+  }
+}

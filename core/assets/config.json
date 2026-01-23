@@ -1,0 +1,52 @@
+{
+    "bot": {
+        "color": "#f1c40f",
+        "intents": [
+            "AutoModerationConfiguration",
+            "AutoModerationExecution",
+            "DirectMessageReactions",
+            "DirectMessageTyping",
+            "DirectMessages",
+            "GuildBans",
+            "GuildEmojisAndStickers",
+            "GuildIntegrations",
+            "GuildInvites",
+            "GuildMembers",
+            "GuildMessageReactions",
+            "GuildMessageTyping",
+            "GuildMessages",
+            "GuildPresences",
+            "GuildScheduledEvents",
+            "GuildVoiceStates",
+            "GuildWebhooks",
+            "Guilds",
+            "MessageContent"
+        ],
+        "partials": [
+            "Channel",
+            "GuildMember",
+            "Message",
+            "Reaction",
+            "User"
+        ],
+        "footer": "https://github.com/Eze234/Free",
+        "prefix": "f!"
+    },
+    "server": {
+        "id": "1460817277275340860",
+        "role": {
+            "wachito": "1464125720925175854",
+            "bot": "1464127369869660161"
+        },
+        "channel": {
+            "welcome": "1464134865292230719",
+            "logs": "1464135104589987938"
+        },
+        "category": {}
+    },
+    "user": {
+        "dev": [
+            "519634005226815492"
+        ]
+    }
+}

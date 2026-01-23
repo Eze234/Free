@@ -1,0 +1,16 @@
+{
+    "instagram": {
+        "post": [
+            "EYEYEYEY %username% público una nueva foto %url%\n No le den like.",
+            "%url% lo subió %username%, ponganle zzzz",
+            "%url% Sybau 💔",
+            "LIKE LIKE LIKE %url%"
+        ],
+        "history": [
+            "OSTIAS %username% subió una historia nueva %url%",
+            "LIKE %url%"
+        ]
+    },
+    "twitch": "%username% prendió 🥱\n%url%",
+    "spotify": "Recomendación diaria: %song% de %artist%\n%url%"
+}

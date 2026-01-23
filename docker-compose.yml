@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  free:
+    build: .
+    container_name: free
+    restart: always
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./core/assets/config:/usr/src/app/free/config
