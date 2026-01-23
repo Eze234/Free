@@ -22,7 +22,7 @@ async function welcome(member: GuildMember) {
         `%member% bienvenido`,
         "Hola %member%",
         "Hola %member%, sos el boludo número %count% que pasa por acá",
-        "%member% acá no somos cortantes."
+        "%member% Sybau 💔\nhttps://cdn.ezezzz.xyz/v1/cdn/get/sybau"
     ];
 
     if (member.user.bot) {

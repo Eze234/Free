@@ -12,7 +12,8 @@
       "@types/*": ["core/assets/types/*"],
       "@free": ["core/assets/types/Free.ts"],
       "@listeners/*": ["core/listeners/*"],
-      "@plugins/*": ["core/plugins/*"]
+      "@plugins/*": ["core/plugins/*"],
+      "@database/*": ["core/assets/database/*"]
     },
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": false,

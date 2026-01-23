@@ -4,13 +4,18 @@ import {
     ActivityType,
 } from "discord.js";
 import colors from "colors/safe";
+import free from "@free";
 import { pathToFileURL } from "node:url";
 import fs from "node:fs";
 import path from "node:path";
+import { saveCache } from "@assets/database/index";
+import Twitch from "@assets/plugins/twitch/notification";
 
 export const ready = async (client: Client) => {
     presence(client);
     hello(client);
+    await connectDatabase(client);
+    await notifications(client);
 };
 
 function hello(client: Client) {
@@ -34,4 +39,29 @@ function presence(client: Client) {
         }
     ]
     client.user?.setPresence({ activities, status: "idle" });
+}
+
+async function connectDatabase(bot: Client) {
+    saveCache();
+
+    free.utils.sleep(2000);
+
+    try {
+        free.prisma.$connect().then(() => {
+            console.log(`[${colors.yellow(`${bot.user?.tag ?? 'Eze#0234'}`)}] ${colors.bgGreen("SUCCESS")} Database connected`);
+        }).catch((err: unknown) => {
+            if (err instanceof Error) {
+                console.log(`[${colors.yellow(`${bot.user?.tag ?? 'Eze#0234'}`)}] ${colors.bgRed("ERROR")} Database connection failed: ${err.message}`);
+            }
+        });
+    } catch (e: unknown) {
+        if (e instanceof Error) {
+            console.log(`[${colors.yellow(`${bot.user?.tag ?? 'Eze#0234'}`)}] ${colors.bgRed("ERROR")} Database connection failed: ${e.message}`);
+        }
+    }
+}
+
+async function notifications(client: Client) {
+    console.log(`[${colors.yellow(`${client.user?.tag ?? 'Eze#0234'}`)}] ${colors.bgBlue("INFO")} Starting notifications plugin...`);
+    Twitch(client);
 }

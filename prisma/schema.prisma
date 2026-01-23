@@ -1,0 +1,65 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../core/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Kick {
+  id          Int     @id @default(autoincrement())
+  broadcaster String  @unique
+  is_live     Boolean @default(false)
+}
+
+model Instagram {
+  id       Int           @id @default(autoincrement())
+  username String        @default("eze")
+  posts    IgPost[]
+  stories  IgStory[]
+}
+
+model Spotify {
+  id             Int               @id @default(autoincrement())
+  playlist       String            @unique
+  recomendations Recomendation[]
+}
+
+model Tag {
+  id        Int    @id @default(autoincrement())
+  name      String
+  content   String
+  invocator String
+
+  @@unique([name, invocator])
+}
+
+/* Vars */
+
+model IgPost {
+  id          Int       @id @default(autoincrement())
+  instagram   Instagram @relation(fields: [instagramId], references: [id])
+  instagramId Int
+  post        String
+}
+
+model IgStory {
+  id          Int       @id @default(autoincrement())
+  instagram   Instagram @relation(fields: [instagramId], references: [id])
+  instagramId Int
+  story       String
+}
+
+model Recomendation {
+  id        Int     @id @default(autoincrement())
+  spotify   Spotify @relation(fields: [spotifyId], references: [id])
+  spotifyId Int
+  url       String  @unique
+}
