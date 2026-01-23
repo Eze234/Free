@@ -12,5 +12,6 @@
         ]
     },
     "twitch": "%username% prendió 🥱\n%url%",
-    "spotify": "Recomendación diaria: %song% de %artist%\n%url%"
+    "spotify": "Recomendación diaria: %song% de %artist%\n%url%",
+    "kick": "%username% prendió, pero en kick 😴\n%url%"
 }
