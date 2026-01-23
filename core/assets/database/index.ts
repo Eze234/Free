@@ -2,7 +2,7 @@ import { config as dot } from "dotenv";
 dot();
 
 import { PrismaPg } from '@prisma/adapter-pg'
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "../../generated/prisma/client";
 import color from "colors/safe";
 import free from "@free";
 
