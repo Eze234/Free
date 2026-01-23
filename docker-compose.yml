@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   free:
     build: .
@@ -9,3 +7,4 @@ services:
       - NODE_ENV=production
     volumes:
       - ./core/assets/config:/usr/src/app/free/config
+      - ./core/generated:/usr/src/app/core/generated
