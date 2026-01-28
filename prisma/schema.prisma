@@ -41,7 +41,19 @@ model Tag {
   @@unique([name, invocator])
 }
 
+model YouTube {
+  id         Int    @id @default(autoincrement)
+  url        YtURL[]
+}
+
 /* Vars */
+
+model YtURL {
+  id         Int       @id @default(autoincrement())
+  youtube    YouTube   @relation(fields: [youtubeId], references: [id])
+  url        String
+
+}
 
 model IgPost {
   id          Int       @id @default(autoincrement())

@@ -4,6 +4,7 @@ import {
     Client,
     GuildMember,
     IntentsBitField,
+    PartialGuildMember,
     Partials
 } from "discord.js";
 import free from "@free";
@@ -17,8 +18,10 @@ const client = new Client({
 /** Listeners */
 import { ready } from "@listeners/ready";
 import { guildMemberAdd } from "@listeners/guildMemberAdd";
+import { guildMemberUpdate } from "@listeners/guildMemberUpdate";
 
 client.on("clientReady", (c: Client) => ready(c));
 client.on("guildMemberAdd", (member: GuildMember) => guildMemberAdd(member));
+client.on("guildMemberUpdate", (oldMember: GuildMember | PartialGuildMember, newMember: GuildMember | undefined) => guildMemberUpdate(oldMember, newMember!));
 
 client.login(free.env.DISCORD_TOKEN);
