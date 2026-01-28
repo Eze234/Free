@@ -35,3 +35,9 @@ bunx prisma studio
 # restore
 bunx prisma migrate reset 
 ```
+
+# `🚬 Biome commands`
+```fix
+# Check and Write fixes
+biome check . --write
+```
