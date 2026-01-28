@@ -1,17 +1,17 @@
 module.exports = {
-  apps: [
-    {
-      name: "free",
-      script: "core/index.ts",
-      interpreter: "bun",
-      exec_mode: "fork",
-      instances: 1,
-      autorestart: true,
-      watch: false,
-      max_memory_restart: "500M",
-      env: {
-        NODE_ENV: "production"
-      }
-    }
-  ]
+	apps: [
+		{
+			name: 'free',
+			script: 'core/index.ts',
+			interpreter: 'bun',
+			exec_mode: 'fork',
+			instances: 1,
+			autorestart: true,
+			watch: false,
+			max_memory_restart: '500M',
+			env: {
+				NODE_ENV: 'production'
+			}
+		}
+	]
 };
